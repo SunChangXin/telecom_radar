@@ -1,0 +1,54 @@
+[
+  {
+    "name": "NTN 与卫星通信",
+    "keywords": ["ntn", "non-terrestrial", "satellite", "leo", "meo", "geo satellite", "starlink", "haps", "uav communication"]
+  },
+  {
+    "name": "ISAC 与通感融合",
+    "keywords": ["isac", "integrated sensing", "joint communication and sensing", "jcas", "icas", "radar communication", "sensing-assisted"]
+  },
+  {
+    "name": "RIS 与智能电磁环境",
+    "keywords": ["reconfigurable intelligent surface", "intelligent reflecting surface", "ris-assisted", "metasurface", "fluid antenna", "smart radio environment"]
+  },
+  {
+    "name": "MIMO 与先进天线",
+    "keywords": ["mimo", "massive mimo", "xl-mimo", "cell-free", "beamforming", "beam alignment", "beam management", "antenna array"]
+  },
+  {
+    "name": "O-RAN 与网络智能",
+    "keywords": ["o-ran", "open ran", "oran", "radio access network", "ran intelligent controller", "ric", "xapp", "rapp", "ran automation"]
+  },
+  {
+    "name": "AI 与语义通信",
+    "keywords": ["semantic communication", "ai-native", "machine learning", "deep learning", "reinforcement learning", "federated learning", "foundation model", "large language model", "neural network"]
+  },
+  {
+    "name": "频谱、波形与空口",
+    "keywords": ["waveform", "ofdm", "otfs", "afdm", "modulation", "channel coding", "grant-free", "random access", "spectrum sharing", "physical layer", "papr", "harq", "noma"]
+  },
+  {
+    "name": "高频通信与新频段",
+    "keywords": ["terahertz", "thz", "sub-thz", "millimeter wave", "mmwave", "visible light communication", "vlc", "optical wireless"]
+  },
+  {
+    "name": "网络架构与业务保障",
+    "keywords": ["network slicing", "urllc", "redcap", "core network", "edge computing", "mec", "service orchestration", "qos", "digital twin", "network architecture"]
+  },
+  {
+    "name": "通信安全与隐私",
+    "keywords": ["physical layer security", "wireless security", "authentication", "privacy", "secrecy rate", "jamming", "spoofing", "post-quantum"]
+  },
+  {
+    "name": "绿色通信与资源优化",
+    "keywords": ["energy efficiency", "energy-efficient", "green communication", "power allocation", "resource allocation", "resource optimization", "carbon", "sustainable network"]
+  },
+  {
+    "name": "开源实现与测试",
+    "keywords": ["sdr", "software defined radio", "srsran", "openairinterface", "gnu radio", "hackrf", "usrp", "simulator", "testbed", "open source", "github"]
+  },
+  {
+    "name": "标准与产业演进",
+    "keywords": ["3gpp", "itu", "etsi", "6g-ia", "next g alliance", "imt-2030", "release 18", "release 19", "release 20", "standardization", "specification", "mobility report", "5g-advanced", "6g"]
+  }
+]

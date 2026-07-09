@@ -1,0 +1,2 @@
+# 每天 09:00 和 18:00 运行一次。路径请改成你的真实项目路径。
+0 9,18 * * * cd /opt/telecom-radar && . .venv/bin/activate && telecom-radar run-once >> data/cron.log 2>&1

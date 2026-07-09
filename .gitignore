@@ -1,0 +1,17 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.data/
+data/*.sqlite3
+data/*.db
+data/*.sqlite3-shm
+data/*.sqlite3-wal
+data/web.pid
+data/reports/
+node_modules/
+.next/
+out/
+.vercel/
+npm-debug.log*
+telecom_radar.egg-info/

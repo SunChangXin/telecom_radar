@@ -1,0 +1,11 @@
+services:
+  telecom-radar:
+    build: .
+    container_name: telecom-radar
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    command: ["telecom-radar", "daemon", "--interval", "21600"]

@@ -1,0 +1,124 @@
+{
+  "keywords": [
+    "6G", "IMT-2030", "B5G", "5G-Advanced", "Release 19", "Release 20",
+    "NR", "RAN", "SA", "NTN", "satellite access", "non-terrestrial network",
+    "ISAC", "integrated sensing and communication", "ICAS", "JCAS",
+    "RIS", "reconfigurable intelligent surface", "intelligent reflecting surface",
+    "cell-free massive MIMO", "massive MIMO", "XL-MIMO", "mMIMO",
+    "O-RAN", "Open RAN", "RAN intelligent controller", "RIC", "xApp", "rApp",
+    "AI-native", "AI/ML", "machine learning", "semantic communication",
+    "THz", "terahertz", "mmWave", "millimeter wave",
+    "OTFS", "grant-free", "random access", "RRC", "NAS", "PHY", "MAC",
+    "network slicing", "URLLC", "RedCap", "XR", "digital twin", "edge intelligence"
+  ],
+  "negative_keywords": [
+    "advertisement", "coupon", "job opening", "招聘", "课程促销"
+  ],
+  "arxiv": {
+    "enabled": true,
+    "max_results_per_query": 20,
+    "days_back": 10,
+    "queries": [
+      "cat:eess.SP OR cat:cs.IT OR cat:cs.NI",
+      "all:6G OR all:IMT-2030 OR all:NTN OR all:ISAC OR all:RIS OR all:cell-free",
+      "all:O-RAN OR all:Open RAN OR all:semantic communication OR all:AI-native wireless"
+    ]
+  },
+  "github": {
+    "enabled": true,
+    "max_results_per_query": 10,
+    "days_back": 30,
+    "queries": [
+      "srsran OR openairinterface OR O-RAN OR OpenRAN language:Python",
+      "6G OR 5G NR OR SDR language:C++",
+      "RIS wireless communication language:Python",
+      "NTN satellite 5G language:Python"
+    ]
+  },
+  "rss": {
+    "enabled": true,
+    "feeds": [
+      {
+        "name": "3GPP News",
+        "url": "https://www.3gpp.org/news-events/3gpp-news",
+        "type": "html-list",
+        "selectors": ["main a[href]", "article a[href]"],
+        "include_keywords": ["release", "5g", "6g", "nr", "ran", "ntn", "architecture", "specification", "workshop"],
+        "exclude_keywords": ["email-protection", "login", "contact", "privacy", "cookie"]
+      },
+      {
+        "name": "IEEE ComSoc Newsletters",
+        "url": "https://www.comsoc.org/publications/newsletters",
+        "type": "html-list",
+        "selectors": ["main a[href]"],
+        "include_keywords": ["wireless", "communication", "network", "6g", "5g", "satellite", "internet", "standard"],
+        "exclude_keywords": ["membership", "volunteer", "donate", "privacy", "contact"]
+      },
+      {
+        "name": "Ericsson Mobility Report Articles",
+        "url": "https://www.ericsson.com/en/reports-and-papers/mobility-report/articles",
+        "type": "html-list",
+        "selectors": ["main a[href]"],
+        "include_keywords": ["5g", "6g", "network", "wireless", "spectrum", "ran", "traffic", "fixed wireless"],
+        "exclude_keywords": ["career", "privacy", "contact", "cookie"]
+      },
+      {
+        "name": "ITU News 6G IMT-2030",
+        "url": "https://www.itu.int/hub/?s=IMT-2030",
+        "type": "html-list",
+        "selectors": ["main a[href]", "article a[href]"],
+        "include_keywords": ["imt-2030", "6g", "5g", "spectrum", "radio", "satellite", "telecommunication"],
+        "exclude_keywords": ["privacy", "contact", "cookie"]
+      },
+      {
+        "name": "ETSI News",
+        "url": "https://www.etsi.org/newsroom/news",
+        "type": "html-list",
+        "path_keywords": ["/newsroom/news/"],
+        "include_keywords": ["6g", "5g", "network", "radio", "telecom", "standard", "satellite", "security"],
+        "exclude_keywords": ["event calendar", "membership", "privacy", "contact"]
+      },
+      {
+        "name": "O-RAN Alliance Announcements",
+        "url": "https://www.o-ran.org/announcements",
+        "type": "html-list",
+        "path_keywords": ["/blog/"],
+        "include_keywords": ["o-ran", "open ran", "ric", "interoperability", "specification", "testing", "plugfest"],
+        "exclude_keywords": ["privacy", "contact", "terms"]
+      },
+      {
+        "name": "Nokia Bell Labs Blog",
+        "url": "https://www.nokia.com/bell-labs/publications-and-media/blog/",
+        "type": "html-list",
+        "selectors": ["main a[href]", "article a[href]"],
+        "path_keywords": ["/blog/"],
+        "include_keywords": ["6g", "5g", "wireless", "network", "radio", "communication", "ai", "quantum"],
+        "exclude_keywords": ["career", "privacy", "contact", "cookie"]
+      },
+      {
+        "name": "6G-IA News",
+        "url": "https://6g-ia.eu/news/",
+        "type": "html-list",
+        "path_keywords": ["/single_post", "/6g-ia-press-releases/", "/6g-ia-paper-", "/virtual-worlds-"],
+        "include_keywords": ["6g", "sns", "wireless", "network", "project", "research", "connectivity"],
+        "exclude_keywords": ["privacy", "contact", "cookie"]
+      },
+      {
+        "name": "Next G Alliance Press Room",
+        "url": "https://nextgalliance.org/press-room/",
+        "type": "html-list",
+        "selectors": ["main a[href]", "article a[href]"],
+        "include_keywords": ["6g", "next g", "wireless", "network", "spectrum", "research", "roadmap"],
+        "exclude_keywords": ["membership", "privacy", "contact", "cookie"]
+      },
+      {
+        "name": "GSMA Networks and 5G Futures",
+        "url": "https://www.gsma.com/solutions-and-impact/technologies/networks/",
+        "type": "html-list",
+        "selectors": ["main a[href]", "article a[href]"],
+        "include_keywords": ["6g", "5g", "network", "spectrum", "open gateway", "non-terrestrial", "connectivity"],
+        "exclude_keywords": ["membership", "privacy", "contact", "cookie"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+[project]
+name = "telecom-radar"
+version = "0.1.0"
+description = "通信前沿自动情报系统：抓取 arXiv / 3GPP / GitHub / RSS，去重、评分、摘要并推送到手机。"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.32.0",
+    "feedparser>=6.0.11",
+    "python-dotenv>=1.0.1",
+    "beautifulsoup4>=4.12.3",
+    "Flask>=3.1.0",
+]
+
+[project.scripts]
+telecom-radar = "telecom_radar.cli:main"
+telecom-radar-web = "telecom_radar.web:main"
+
+[tool.setuptools]
+packages = ["telecom_radar"]
