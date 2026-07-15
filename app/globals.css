@@ -57,6 +57,44 @@ button { color: inherit; }
 .setupCard p { margin: 0 0 10px; color: var(--muted); }
 .setupCard code { color: #ffd166; word-break: break-all; }
 
+.sourcePolicy {
+  margin-top: 24px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(72,255,145,.12), transparent 18rem),
+    rgba(2,9,28,.34);
+}
+.sourcePolicyHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 22px;
+  margin-bottom: 16px;
+}
+.sourcePolicyHead h2 { margin: 6px 0 0; font-size: 24px; }
+.sourcePolicyHead p { max-width: 560px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.sourcePolicyGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.sourcePolicyGrid article {
+  min-height: 130px;
+  padding: 14px;
+  border: 1px solid rgba(119,213,255,.16);
+  border-radius: 17px;
+  background: rgba(255,255,255,.045);
+}
+.sourcePolicyGrid article div { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.sourcePolicyGrid strong { font-size: 14px; line-height: 1.25; }
+.sourcePolicyGrid article span {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(72,255,145,.12);
+  color: var(--green);
+  font: 10px var(--mono);
+}
+.sourcePolicyGrid p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+
 .tabs { display: flex; gap: 10px; padding-top: 22px; overflow-x: auto; }
 .tabs button, .refreshLink { border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.04); color: var(--ink); padding: 10px 14px; text-decoration: none; cursor: pointer; }
 .tabs button.active { border-color: rgba(72,255,145,.5); background: rgba(72,255,145,.16); }
@@ -128,10 +166,14 @@ button { color: inherit; }
   .rail { position: static; border-right: 0; border-bottom: 1px solid var(--line); }
   .rail button { display: inline-flex; width: auto; margin: 3px; }
   .hero, .contentGrid, .toolbar, .portalPanel { grid-template-columns: 1fr; }
+  .sourcePolicyHead { display: block; }
+  .sourcePolicyHead p { margin-top: 10px; }
+  .sourcePolicyGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .portalGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .inspector { position: static; }
 }
 
 @media (max-width: 620px) {
+  .sourcePolicyGrid { grid-template-columns: 1fr; }
   .portalGrid { grid-template-columns: 1fr; }
 }

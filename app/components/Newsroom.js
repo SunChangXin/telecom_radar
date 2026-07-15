@@ -3,6 +3,13 @@
 import { useMemo, useState } from "react";
 
 const CONTENT_TYPES = ["论文", "标准组织", "产业资讯", "开源项目"];
+const SOURCE_POLICIES = [
+  { name: "arXiv", mode: "自动抓取", detail: "继续作为预印本主来源，适合 6G / RIS / ISAC / NTN 快速发现。" },
+  { name: "IEEE Xplore", mode: "API 自动抓取", detail: "使用 IEEE Metadata Search API，只抓元数据、摘要和原文链接。" },
+  { name: "Springer / Wiley", mode: "RSS/TOC 自动抓取", detail: "接入公开 RSS 和期刊目录，不抓取受限全文。" },
+  { name: "Google Scholar", mode: "人工入口", detail: "不自动抓取；根据搜索词跳转 Scholar，避免反爬和账号风险。" },
+  { name: "CNKI", mode: "人工入口", detail: "不自动抓取；提供中文文献/硕博论文检索跳转。" }
+];
 const ACADEMIC_PORTALS = [
   {
     name: "Google Scholar",
@@ -109,6 +116,22 @@ export default function Newsroom({ initialItems, setupError }) {
             <code>{setupError}</code>
           </section>
         ) : null}
+
+        <section className="sourcePolicy" aria-label="数据源接入策略">
+          <div className="sourcePolicyHead">
+            <span className="portalEyebrow">SOURCE STRATEGY</span>
+            <h2>数据源接入方式</h2>
+            <p>自动源会进入每 6 小时的云端抓取；人工入口只负责跳转检索，不在后台爬取。</p>
+          </div>
+          <div className="sourcePolicyGrid">
+            {SOURCE_POLICIES.map((policy) => (
+              <article key={policy.name}>
+                <div><strong>{policy.name}</strong><span>{policy.mode}</span></div>
+                <p>{policy.detail}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <nav className="tabs">
           <button className={type === "all" ? "active" : ""} onClick={() => setType("all")}>全部内容</button>
