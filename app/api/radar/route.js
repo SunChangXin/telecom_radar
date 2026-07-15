@@ -7,6 +7,27 @@ import { notifyNewItems } from "@/lib/notify";
 export const runtime = "nodejs";
 export const maxDuration = 60;
 
+function rowForItem(item, includeFirstSeen = false) {
+  const row = {
+    id: item.id,
+    source: item.source,
+    title: item.title,
+    url: item.url,
+    summary: item.summary || "",
+    zh_summary: item.zh_summary || "",
+    content_type: item.content_type,
+    primary_domain: item.primary_domain,
+    domains: item.domains || [],
+    authors: item.authors || [],
+    tags: item.tags || [],
+    score: item.score || 0,
+    published_at: item.published_at || null,
+    last_seen_at: item.last_seen_at
+  };
+  if (includeFirstSeen) row.first_seen_at = item.first_seen_at;
+  return row;
+}
+
 function authorized(request) {
   const secret = process.env.CRON_SECRET;
   if (!secret) return true;
@@ -23,24 +44,9 @@ export async function GET(request) {
     const { items, errors } = await crawlRadarItems();
     const existing = await getExistingIds(items.map((item) => item.id));
     const newItems = items.filter((item) => !existing.has(item.id));
-    const rows = items.map((item) => ({
-      id: item.id,
-      source: item.source,
-      title: item.title,
-      url: item.url,
-      summary: item.summary || "",
-      zh_summary: item.zh_summary || "",
-      content_type: item.content_type,
-      primary_domain: item.primary_domain,
-      domains: item.domains || [],
-      authors: item.authors || [],
-      tags: item.tags || [],
-      score: item.score || 0,
-      published_at: item.published_at || null,
-      first_seen_at: existing.has(item.id) ? undefined : item.first_seen_at,
-      last_seen_at: item.last_seen_at
-    }));
-    await upsertRadarItems(rows);
+    const existingItems = items.filter((item) => existing.has(item.id));
+    await upsertRadarItems(newItems.map((item) => rowForItem(item, true)));
+    await upsertRadarItems(existingItems.map((item) => rowForItem(item, false)));
     const notifyResult = await notifyNewItems(newItems);
     if (notifyResult.ids?.length) await markNotified(notifyResult.ids);
 
