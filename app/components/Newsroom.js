@@ -7,7 +7,6 @@ const SOURCE_POLICIES = [
   { name: "arXiv", mode: "自动抓取", detail: "继续作为预印本主来源，适合 6G / RIS / ISAC / NTN 快速发现。" },
   { name: "IEEE Xplore", mode: "API 自动抓取", detail: "使用 IEEE Metadata Search API，只抓元数据、摘要和原文链接。" },
   { name: "Springer / Wiley", mode: "RSS/TOC 自动抓取", detail: "接入公开 RSS 和期刊目录，不抓取受限全文。" },
-  { name: "Ericsson", mode: "人工入口", detail: "官网对云端请求启用 Cloudflare 挑战，自动抓取不稳定，保留人工查看入口。" },
   { name: "Google Scholar", mode: "人工入口", detail: "不自动抓取；根据搜索词跳转 Scholar，避免反爬和账号风险。" },
   { name: "CNKI", mode: "人工入口", detail: "不自动抓取；提供中文文献/硕博论文检索跳转。" }
 ];
@@ -37,12 +36,6 @@ const ACADEMIC_PORTALS = [
     name: "IEEE Xplore",
     note: "人工检索 IEEE 论文库",
     url: "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText="
-  },
-  {
-    name: "Ericsson Mobility Report",
-    note: "人工查看产业报告与网络趋势",
-    url: "https://www.ericsson.com/en/reports-and-papers/mobility-report",
-    direct: true
   }
 ];
 
