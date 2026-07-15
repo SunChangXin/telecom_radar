@@ -18,8 +18,9 @@ const ACADEMIC_PORTALS = [
   },
   {
     name: "CNKI",
-    note: "人工检索中文论文/硕博论文",
-    url: "https://kns.cnki.net/kns8s/defaultresult/index?kw="
+    note: "打开知网首页后人工检索",
+    url: "https://www.cnki.net/",
+    direct: true
   },
   {
     name: "SpringerLink",
@@ -50,6 +51,7 @@ function dateText(value) {
 }
 
 function searchUrl(baseUrl, query) {
+  if (!baseUrl.includes("=")) return baseUrl;
   const normalized = query?.trim() || "6G OR NTN OR ISAC OR RIS OR O-RAN";
   return `${baseUrl}${encodeURIComponent(normalized)}`;
 }
@@ -163,7 +165,7 @@ export default function Newsroom({ initialItems, setupError }) {
           <div>
             <span className="portalEyebrow">MANUAL ACADEMIC SEARCH</span>
             <h2>学术数据库入口</h2>
-            <p>Google Scholar 和 CNKI 不做自动抓取；这里按当前搜索词生成跳转入口。Springer / Wiley 已额外接入公开 RSS，仍可在这里人工深挖。</p>
+            <p>Google Scholar 不做自动抓取，会按当前搜索词跳转；CNKI 直接打开新版知网首页，登录后人工检索。Springer / Wiley 已额外接入公开 RSS，仍可在这里人工深挖。</p>
           </div>
           <div className="portalGrid">
             {ACADEMIC_PORTALS.map((portal) => (
