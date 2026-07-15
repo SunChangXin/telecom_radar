@@ -91,14 +91,6 @@
         "exclude_keywords": ["book review", "erratum", "correction"]
       },
       {
-        "name": "Ericsson Mobility Report Articles",
-        "url": "https://www.ericsson.com/en/reports-and-papers/mobility-report/articles",
-        "type": "html-list",
-        "selectors": ["main a[href]"],
-        "include_keywords": ["5g", "6g", "network", "wireless", "spectrum", "ran", "traffic", "fixed wireless"],
-        "exclude_keywords": ["career", "privacy", "contact", "cookie"]
-      },
-      {
         "name": "ITU News 6G IMT-2030",
         "url": "https://www.itu.int/hub/?s=IMT-2030",
         "type": "html-list",
