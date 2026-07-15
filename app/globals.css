@@ -66,6 +66,36 @@ button { color: inherit; }
 .toolbar input[type="range"] { padding: 0; accent-color: var(--green); }
 .refreshLink { display: inline-flex; height: 44px; align-items: center; justify-content: center; border-radius: 13px; background: linear-gradient(135deg, var(--cyan), var(--green)); color: #03122f; font-weight: 800; }
 
+.portalPanel {
+  display: grid;
+  grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr);
+  gap: 22px;
+  margin: 0 0 28px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(33, 231, 255, .08), rgba(72, 255, 145, .05)),
+    rgba(2, 9, 28, .38);
+}
+.portalEyebrow { color: var(--green); font: 10px var(--mono); letter-spacing: .14em; }
+.portalPanel h2 { margin: 7px 0 8px; font-size: 24px; }
+.portalPanel p { margin: 0; color: var(--muted); line-height: 1.7; font-size: 13px; }
+.portalGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.portalGrid a {
+  min-height: 96px;
+  padding: 14px;
+  border: 1px solid rgba(119, 213, 255, .16);
+  border-radius: 17px;
+  background: rgba(255,255,255,.045);
+  color: var(--ink);
+  text-decoration: none;
+}
+.portalGrid a:hover { border-color: rgba(72,255,145,.45); background: rgba(72,255,145,.08); }
+.portalGrid strong, .portalGrid span { display: block; }
+.portalGrid strong { margin-bottom: 9px; font-size: 14px; }
+.portalGrid span { color: var(--muted); font-size: 12px; line-height: 1.45; }
+
 .contentGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 34%); gap: 30px; align-items: start; }
 .feedHead { display: flex; justify-content: space-between; color: var(--muted); font: 11px var(--mono); padding-bottom: 12px; }
 .signal { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 18px; padding: 20px 14px 20px 4px; border-bottom: 1px solid var(--line); cursor: pointer; }
@@ -97,6 +127,11 @@ button { color: inherit; }
   .shell { display: block; }
   .rail { position: static; border-right: 0; border-bottom: 1px solid var(--line); }
   .rail button { display: inline-flex; width: auto; margin: 3px; }
-  .hero, .contentGrid, .toolbar { grid-template-columns: 1fr; }
+  .hero, .contentGrid, .toolbar, .portalPanel { grid-template-columns: 1fr; }
+  .portalGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .inspector { position: static; }
+}
+
+@media (max-width: 620px) {
+  .portalGrid { grid-template-columns: 1fr; }
 }

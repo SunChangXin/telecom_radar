@@ -3,6 +3,33 @@
 import { useMemo, useState } from "react";
 
 const CONTENT_TYPES = ["论文", "标准组织", "产业资讯", "开源项目"];
+const ACADEMIC_PORTALS = [
+  {
+    name: "Google Scholar",
+    note: "人工检索引用和相关工作",
+    url: "https://scholar.google.com/scholar?q="
+  },
+  {
+    name: "CNKI",
+    note: "人工检索中文论文/硕博论文",
+    url: "https://kns.cnki.net/kns8s/defaultresult/index?kw="
+  },
+  {
+    name: "SpringerLink",
+    note: "公开检索 Springer 论文",
+    url: "https://link.springer.com/search?query="
+  },
+  {
+    name: "Wiley Online Library",
+    note: "公开检索 Wiley 论文",
+    url: "https://onlinelibrary.wiley.com/action/doSearch?AllField="
+  },
+  {
+    name: "IEEE Xplore",
+    note: "人工检索 IEEE 论文库",
+    url: "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText="
+  }
+];
 
 function uniqueCounts(items, key) {
   const counts = new Map();
@@ -13,6 +40,11 @@ function uniqueCounts(items, key) {
 function dateText(value) {
   if (!value) return "日期未知";
   return String(value).slice(0, 10);
+}
+
+function searchUrl(baseUrl, query) {
+  const normalized = query?.trim() || "6G OR NTN OR ISAC OR RIS OR O-RAN";
+  return `${baseUrl}${encodeURIComponent(normalized)}`;
 }
 
 export default function Newsroom({ initialItems, setupError }) {
@@ -102,6 +134,22 @@ export default function Newsroom({ initialItems, setupError }) {
             <input type="range" min="0" max={topScore} value={minScore} onChange={(event) => setMinScore(event.target.value)} />
           </label>
           <a className="refreshLink" href="/api/radar" target="_blank" rel="noreferrer">手动刷新</a>
+        </section>
+
+        <section className="portalPanel" aria-label="学术数据库人工检索入口">
+          <div>
+            <span className="portalEyebrow">MANUAL ACADEMIC SEARCH</span>
+            <h2>学术数据库入口</h2>
+            <p>Google Scholar 和 CNKI 不做自动抓取；这里按当前搜索词生成跳转入口。Springer / Wiley 已额外接入公开 RSS，仍可在这里人工深挖。</p>
+          </div>
+          <div className="portalGrid">
+            {ACADEMIC_PORTALS.map((portal) => (
+              <a key={portal.name} href={searchUrl(portal.url, query)} target="_blank" rel="noreferrer">
+                <strong>{portal.name}</strong>
+                <span>{portal.note}</span>
+              </a>
+            ))}
+          </div>
         </section>
 
         <div className="contentGrid">

@@ -70,6 +70,27 @@
         "exclude_keywords": ["membership", "volunteer", "donate", "privacy", "contact"]
       },
       {
+        "name": "SpringerLink Communications Search",
+        "url": "https://link.springer.com/search.rss?query=%286G+OR+%22non-terrestrial+network%22+OR+ISAC+OR+RIS+OR+%22O-RAN%22+OR+%22semantic+communication%22%29",
+        "type": "rss-feed",
+        "include_keywords": ["6g", "5g", "wireless", "communication", "network", "satellite", "isac", "ris", "o-ran", "mimo", "terahertz", "semantic"],
+        "exclude_keywords": ["book review", "erratum", "correction"]
+      },
+      {
+        "name": "Wiley International Journal of Communication Systems",
+        "url": "https://onlinelibrary.wiley.com/action/showFeed?jc=10991131&type=etoc&feed=rss",
+        "type": "rss-feed",
+        "include_keywords": ["6g", "5g", "wireless", "communication", "network", "satellite", "mimo", "ofdm", "iot", "edge", "spectrum"],
+        "exclude_keywords": ["book review", "erratum", "correction"]
+      },
+      {
+        "name": "Wiley Emerging Telecommunications Technologies",
+        "url": "https://onlinelibrary.wiley.com/action/showFeed?jc=21613915&type=etoc&feed=rss",
+        "type": "rss-feed",
+        "include_keywords": ["6g", "5g", "wireless", "telecommunication", "network", "satellite", "mimo", "iot", "edge", "spectrum"],
+        "exclude_keywords": ["book review", "erratum", "correction"]
+      },
+      {
         "name": "Ericsson Mobility Report Articles",
         "url": "https://www.ericsson.com/en/reports-and-papers/mobility-report/articles",
         "type": "html-list",
