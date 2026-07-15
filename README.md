@@ -265,6 +265,14 @@ GitHub 抓取如果遇到 403，配置：
 GITHUB_TOKEN=你的 GitHub token
 ```
 
+IEEE Xplore API 申请通过后，配置：
+
+```env
+IEEE_API_KEY=你的 IEEE Xplore Metadata Search API Key
+```
+
+云端版只使用 IEEE Metadata Search API 抓取论文元数据、摘要和 IEEE Xplore 链接，不下载或分发全文。
+
 手动运行一次并打印：
 
 ```bash

@@ -24,6 +24,21 @@
       "all:O-RAN OR all:Open RAN OR all:semantic communication OR all:AI-native wireless"
     ]
   },
+  "ieee": {
+    "enabled": true,
+    "max_results_per_query": 10,
+    "start_year": 2024,
+    "queries": [
+      "\"6G\" OR \"IMT-2030\" OR \"5G-Advanced\"",
+      "\"non-terrestrial network\" OR \"NTN\" OR satellite",
+      "\"integrated sensing and communication\" OR \"ISAC\"",
+      "\"reconfigurable intelligent surface\" OR \"RIS\"",
+      "\"O-RAN\" OR \"Open RAN\" OR \"RAN intelligent controller\"",
+      "\"semantic communication\" OR \"AI-native\" OR \"wireless AI\"",
+      "\"cell-free massive MIMO\" OR \"XL-MIMO\" OR beamforming",
+      "\"terahertz communication\" OR \"THz\" OR \"mmWave\""
+    ]
+  },
   "github": {
     "enabled": true,
     "max_results_per_query": 10,
